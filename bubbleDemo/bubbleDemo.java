@@ -8,8 +8,10 @@ public class bubbleDemo {
 		int[] abc = {12,32,11,-15,27,33,22,19,28};
 		int[] aaa = Arrays.copyOf(abc, abc.length);
 		//SORT(aaa);
-		SORT2(aaa);
+		//SORT2(aaa);
 		System.out.println(Arrays.toString(abc));
+		//System.out.println(Arrays.toString(aaa));
+		SORT3(aaa);
 		System.out.println(Arrays.toString(aaa));
 	}
 	public static void SORT(int[] arr){
@@ -40,5 +42,19 @@ public class bubbleDemo {
 				i++;
 			}
 		}
+	}
+	public static void SORT3(int[] arr){
+		
+		for(int i=0; i<arr.length-1; i++) {
+			
+			for(int j=0; j<arr.length - 1 - i; j++) {
+				int temp;
+				if(arr[j] < arr[j+1]) {
+					temp = arr[j+1];
+					arr[j+1] = arr[j];
+					arr[j] =temp;
+				}
+			}
+		}		
 	}
 }
